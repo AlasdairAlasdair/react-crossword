@@ -19,6 +19,40 @@ var PageContent = React.createClass({
                         {
                             "number" : null
                         },
+                        {
+                            "number" : 1
+                        },
+                        null,
+                        {
+                            "number" : 2
+                        },
+                        {
+                            "number" : null
+                        },
+                        null,
+                        {
+                            "number" : 3
+                        },
+                        {
+                            "number" : null
+                        },
+                        {
+                            "number" : 1
+                        },
+                        null,
+                        {
+                            "number" : 2
+                        },
+                        {
+                            "number" : null
+                        },
+                        null,
+                        {
+                            "number" : 3
+                        },
+                        {
+                            "number" : null
+                        }
                       ]
                 };
 
@@ -49,6 +83,7 @@ var Grid = React.createClass({
     this.props.cells.map((cell, index) => {
         allCells.push((<Cell key={"cell" + index} cellInfo={cell}/>));
       })
+      
     return (
       <div className="grid">
         {allCells}

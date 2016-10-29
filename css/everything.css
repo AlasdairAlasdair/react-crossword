@@ -74,15 +74,16 @@
 
 
 .grid {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
   border: #A9A9A9 solid 1px;
   /* TODO unhack: cell-container dimensions x 16 */
   width:16em;
   height:16em;
   background:black; 
-  }
+
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
   
 .cell-container{
     height:2ch;
