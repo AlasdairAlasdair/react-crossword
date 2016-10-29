@@ -77,11 +77,12 @@
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex: 1;
   border: #A9A9A9 solid 1px;
-  width: 200px}
+  /* TODO unhack: cell-container dimensions x 16 */
+  width:16em;
+  height:16em;
+  background:black; 
+  }
   
 .cell-container{
     height:2ch;
