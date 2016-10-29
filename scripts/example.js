@@ -106,9 +106,9 @@ var Cell = React.createClass({
 var EmptyCell = React.createClass({
   render: function() {
     return (
-      <div className="cell-container" >
-            <div className="cell empty"/>
-        </div>
+      <div className="cell-container">
+        <input className="cell empty" maxLength="1" disabled></input>
+      </div>
     )
   }
 })
@@ -117,10 +117,7 @@ var AnswerCell = React.createClass({
   render: function() {
     return (
       <div className="cell-container" >
-            <div className="number-container">
-                <p className="number">{this.props.cellInfo.number}</p>
-            </div>
-            <input className="cell" maxLength="1"></input>
+            <input className="cell answer" maxLength="1"></input>
         </div>
     )
   }

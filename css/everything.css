@@ -77,6 +77,7 @@
   border: #A9A9A9 solid 1px;
   /* TODO unhack: cell-container dimensions x 16 */
   width:16em;
+  /*height:16ch;*/
   height:16em;
   background:black; 
 
@@ -86,24 +87,25 @@
 }
   
 .cell-container{
-    height:2ch;
-    width: 1em;
+  margin: 1px;
+}
+
+.cell.empty{
+  background-color: black;
 }
     
 .cell{
-  max-width: 100%;
+  box-sizing: border-box;
+  width:2em;
+  height:2em;
+  border:none;
+}
+ 
+.cell.answer{
   background-color: white;
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
-  padding-left: 2px;
+  padding-left:33%;
 }
 
-.shaded{
-    background-color: black;
-    color: white;
-}
-  
 .number-container {
     position: absolute;
 }
