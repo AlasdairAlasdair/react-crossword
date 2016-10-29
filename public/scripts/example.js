@@ -20,30 +20,31 @@ var PageContent = React.createClass({
     return (
       
       <main className="site-content fade-in">
-        <Grid grid={grid}></Grid>
+        <GridContainer grid={grid}></GridContainer>
       </main>
     )
   }
 })
 
-var Grid = React.createClass({
+var GridContainer = React.createClass({
   
   render: function() {
     
     return (
-      <Cell cells={this.props.grid.cells}></Cell>
+      <div id="grid-container">
+          <Grid cells={this.props.grid.cells}></Grid>
+      </div>
     );
   }
 });
 
-var Cell = React.createClass({
+var Grid = React.createClass({
   
   render: function() {
     return (
-      <div id="grid-container">
-      
-        {this.props.cells.map((cell) => (
-            <div className="cell-container">
+      <div className="grid">
+        {this.props.cells.map((cell, index) => (
+            <div className="cell-container" key={cell + index}>
               <div className="number-container">
                   <p className="number">{cell.number}</p>
               </div>
