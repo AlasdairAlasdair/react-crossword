@@ -117,8 +117,11 @@ var AnswerCell = React.createClass({
   render: function() {
     return (
       <div className="cell-container" >
-            <input className="cell answer" maxLength="1"></input>
-        </div>
+            <div className="number-container">
+                <p className="number">{this.props.cellInfo.number}</p>
+            </div>
+          <input className="cell answer" maxLength="1"></input>
+      </div>
     )
   }
 }) 
