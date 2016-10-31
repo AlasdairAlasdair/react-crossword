@@ -1,0 +1,59 @@
+{
+    "size" : {
+        "x" : 8,
+        "y" : 8
+        },
+    "cells" : [
+                {
+                    "number" : 1
+                },
+                null,
+                {
+                    "number" : 2
+                },
+                {
+                    "number" : null
+                },
+                null,
+                {
+                    "number" : 3
+                },
+                {
+                    "number" : null
+                },
+                {
+                    "number" : 1
+                },
+                null,
+                {
+                    "number" : 2
+                },
+                {
+                    "number" : null
+                },
+                null,
+                {
+                    "number" : 3
+                },
+                {
+                    "number" : null
+                },
+                {
+                    "number" : 1
+                },
+                null,
+                {
+                    "number" : 2
+                },
+                {
+                    "number" : null
+                },
+                null,
+                {
+                    "number" : 3
+                },
+                {
+                    "number" : null
+                }
+            ]
+}

@@ -4,7 +4,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-var COMMENTS_FILE = path.join(__dirname, 'comments.json');
+var GRID_FILE = path.join(__dirname, 'grid.json');
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -23,8 +23,8 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/api/comments', function(req, res) {
-  fs.readFile(COMMENTS_FILE, function(err, data) {
+app.get('/api/grid', function(req, res) {
+  fs.readFile(GRID_FILE, function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);

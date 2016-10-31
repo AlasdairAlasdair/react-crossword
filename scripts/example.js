@@ -1,65 +1,35 @@
 var PageContent = React.createClass({
-  render(){
-    const grid = {
-            "cells" : [
-                        {
-                            "number" : 1
-                        },
-                        null,
-                        {
-                            "number" : 2
-                        },
-                        {
-                            "number" : null
-                        },
-                        null,
-                        {
-                            "number" : 3
-                        },
-                        {
-                            "number" : null
-                        },
-                        {
-                            "number" : 1
-                        },
-                        null,
-                        {
-                            "number" : 2
-                        },
-                        {
-                            "number" : null
-                        },
-                        null,
-                        {
-                            "number" : 3
-                        },
-                        {
-                            "number" : null
-                        },
-                        {
-                            "number" : 1
-                        },
-                        null,
-                        {
-                            "number" : 2
-                        },
-                        {
-                            "number" : null
-                        },
-                        null,
-                        {
-                            "number" : 3
-                        },
-                        {
-                            "number" : null
-                        }
-                      ]
-                };
+  loadGridFromServer() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  getInitialState() {
+     return {
+       cells : [] 
+    };
+  },
+  componentDidMount() {
+    this.loadGridFromServer();
+  },
 
+  render(){
+    var data = {
+       cells : [] 
+    }
+    // <GridContainer grid={this.state.data.cells}></GridContainer>
     return (
       
       <main className="site-content fade-in">
-        <GridContainer grid={grid}></GridContainer>
+        <GridContainer grid={data.cells}></GridContainer>
       </main>
     )
   }
@@ -127,7 +97,6 @@ var AnswerCell = React.createClass({
 }) 
 
 ReactDOM.render(
-  <PageContent></PageContent>,
-  // <CommentBox url="/api/comments" pollInterval={2000} />,
+  <PageContent url="/api/grid"></PageContent>,
   document.getElementById('content')
 );
