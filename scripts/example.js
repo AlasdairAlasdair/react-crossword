@@ -21,15 +21,11 @@ var PageContent = React.createClass({
     this.loadGridFromServer();
   },
 
-  render(){
-    var data = {
-       cells : [] 
-    }
-    // <GridContainer grid={this.state.data.cells}></GridContainer>
+  render(){ 
     return (
       
       <main className="site-content fade-in">
-        <GridContainer grid={data.cells}></GridContainer>
+        <GridContainer></GridContainer>
       </main>
     )
   }
@@ -41,7 +37,7 @@ var GridContainer = React.createClass({
     
     return (
       <div id="grid-container">
-          <Grid cells={this.props.grid.cells}></Grid>
+          <Grid></Grid>
       </div>
     );
   }
@@ -50,9 +46,12 @@ var GridContainer = React.createClass({
 var Grid = React.createClass({
   render: function() {
     var allCells = [];
-    this.props.cells.map((cell, index) => {
-        allCells.push((<Cell key={"cell" + index} cellInfo={cell}/>));
-      })
+    if (this.state && this.state.data.grid.cells){  
+        this.state.data.grid.cells.map((cell, index) => {
+            allCells.push((<Cell key={"cell" + index} cellInfo={cell}/>));
+        })
+    }
+    
       
     return (
       <div className="grid">
